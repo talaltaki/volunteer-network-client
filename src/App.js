@@ -1,9 +1,13 @@
 import React, { createContext, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
+import Home from "./components/Home/Home";
+import RegisteredEvents from "./components/RegisteredEvents/RegisteredEvents";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import AddEvent from "./components/Dashboard/AddEvent";
+import VolunteerList from "./components/Dashboard/VolunteerList";
 
 export const UserContext = createContext();
 
@@ -17,8 +21,20 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/registration">
+          <PrivateRoute path="/registration/:id">
             <Registration />
+          </PrivateRoute>
+          <PrivateRoute path="/registered-events">
+            <RegisteredEvents />
+          </PrivateRoute>
+          <Route path="/add-event">
+            <AddEvent />
+          </Route>
+          <Route path="/all-registrations">
+            <VolunteerList />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>

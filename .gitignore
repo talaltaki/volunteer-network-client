@@ -24,3 +24,5 @@ yarn-error.log*
 
 # firebase config file
 src/components/Login/firebaseConfig.js
+
+fakeData.js

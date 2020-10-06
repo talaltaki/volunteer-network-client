@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import "./Login.css";
 import logo from "../../images/logos/logo.png";
 import googleIcon from "../../images/logos/google.png";
 import * as firebase from "firebase/app";
@@ -59,7 +58,14 @@ const Login = () => {
 
   return (
     <>
-      <img className="logo mx-auto d-block mt-5" src={logo} alt="logo" />
+      <a href="/">
+        <img
+          className="logo mx-auto d-block mt-5"
+          src={logo}
+          href="/home"
+          alt="logo"
+        />
+      </a>
 
       <div className="card w-50 mx-auto d-block rounded mt-5 pt-5">
         <div className="card-body text-center">
